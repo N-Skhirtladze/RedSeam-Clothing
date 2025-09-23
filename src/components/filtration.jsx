@@ -3,7 +3,7 @@ import Sort from "./sort";
 import Filter from "./filter";
 import { useState } from "react";
 
-const Filtration = ({ setCriteria, firstInputProps, secondInputProps, handleSubmit, setFormData, }) => {
+const Filtration = ({ setCriteria, firstInputProps, secondInputProps, handleSubmit, setFormData, from, to, total}) => {
     const [dropDown, setDropDown] = useState(false);
     const [priceForm, setPriceForm] = useState(false);
 
@@ -16,7 +16,7 @@ const Filtration = ({ setCriteria, firstInputProps, secondInputProps, handleSubm
         <div className="filtration">
             <h1>Products</h1>
             <ul className="filter-components">
-                <li className="shown-products">Showing 1–10 of 100 results</li>
+                <li className="shown-products">Showing {from}–{to} of {total} results</li>
                 <li className="filter">
                     <ul>
                         <li onClick={handlePriceForm}><img src="./images/adjustments-horizontal.png" alt="" className="filter-icon" /></li>

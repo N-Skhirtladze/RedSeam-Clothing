@@ -60,7 +60,6 @@ const Pages = ({ pageAmount, currentPage, setCurrentPage }) => {
                     <p
                         key={page}
                         onClick={() => setCurrentPage(page)}
-                        // style={{ fontWeight: page === currentPage ? "bold" : "normal" }}
                         className={page === currentPage ? "page current" : "page" }
                     >
                         {arr[i]}

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const Card = ({ product }) => {
     return (
@@ -14,7 +16,7 @@ const DisplayCards = ({ products }) => {
     // console.log(products);
     return (
         <div className="cards">
-            {products.map(product => (<Card key={product.id} product={product} />))}
+            {products.map(product => (<Link key={product.id} to={`/products/${product.id}`} style={{ textDecoration: "none", color: "inherit" }}><Card product={product} /> </Link>))}
         </div>
     )
 }
