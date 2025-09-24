@@ -7,7 +7,7 @@ import Description from "../components/description-side";
 
 
 function ProductDetail() {
-    const { id } = useParams(); 
+    const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [color, setColor] = useState(0);
     // const [image, setImage] = useState('');
@@ -17,26 +17,28 @@ function ProductDetail() {
         const fetchData = async () => {
             const api = await fetch(URL);
             try {
-                if(api.ok){
+                if (api.ok) {
                     const data = await api.json();
                     setProduct(data);
                     console.log('product detail', data);
                     setColor(0);
                 }
             } catch (error) {
-                
+
             }
         }
         fetchData();
     }, [id]);
-    
+
 
     return (
         <>
             <Header />
             {/* <h1>{color}</h1> */}
-            <Images product={product} color={color} setColor={setColor}/>
-            <Description product={product} color={color} setColor={setColor}/>
+            <div className="product-main-div">
+                <Images product={product} color={color} setColor={setColor} />
+                <Description product={product} color={color} setColor={setColor} />
+            </div>
         </>
     )
 }
