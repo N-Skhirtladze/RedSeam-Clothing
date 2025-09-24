@@ -1,8 +1,12 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-const Description = ({ product, color, setColor }) => {
+const Description = ({ product, color, setColor, isOpen, setIsOpen, setProductList, image }) => {
     const [size, setSize] = useState(product?.available_sizes[0]);
     const [quantity, setQuantity] = useState(1);
+
+    useEffect(() => {
+        setSize(product?.available_sizes[0]);
+    }, [product]);
 
     const handleQuantity = (e) => {
         const value = Math.max(1, Number(e.target.value));
@@ -17,6 +21,28 @@ const Description = ({ product, color, setColor }) => {
         setSize(e.target.textContent);
     }
 
+    const handleAddToCart = () => {
+        setIsOpen(!isOpen);
+        const productInfo = {
+            id: crypto.randomUUID(),
+            name: product.name,
+            color: product?.available_colors[color],
+            image: image,
+            size: size,
+            quantity: quantity,
+            price: product.price
+        };
+
+        setProductList((prev) => {
+            const index = prev.findIndex((p) => p.name == productInfo.name && p.color == productInfo.color && p.size == productInfo.size && p.price == productInfo.price);
+
+            if (index == -1) return [...prev, productInfo];
+
+            return [...prev];
+
+        });
+
+    }
     return (
         <div className="description">
             <div className="product-header">
@@ -47,7 +73,7 @@ const Description = ({ product, color, setColor }) => {
                 <div className="sizes">
                     {product?.available_sizes.map((s) => (<p key={'size-' + s} onClick={handleSize} className="size" style={
                         {
-                            backgroundColor: s == size ?  "#F8F6F7" : "",
+                            backgroundColor: s == size ? "#F8F6F7" : "",
                             border: s == size ? "1px solid #10151F" : ""
                         }
                     }>{s}</p>))}
@@ -59,7 +85,7 @@ const Description = ({ product, color, setColor }) => {
                     <input type="number" name="quantity" value={quantity} min={1} onChange={handleQuantity} />
                 </form>
             </div>
-            <button type="button" className="add-to-cart"><img src="../images/Vector.png" alt="" /> Add to cart</button>
+            <button type="button" className="add-to-cart" onClick={handleAddToCart}><img src="../images/Vector.png" alt="" /> Add to cart</button>
             <div className="details-div">
                 <div className="details-header">
                     <p>Details</p>

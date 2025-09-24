@@ -1,4 +1,10 @@
-const Images = ({ product, color, setColor }) => {
+import { useEffect } from "react";
+
+const Images = ({ product, color, setColor, setImage }) => {
+
+    useEffect(() => {
+        setImage(product?.images[color]);
+    }, [color])
 
     const handleImage = (index) => {
         setColor(index);
