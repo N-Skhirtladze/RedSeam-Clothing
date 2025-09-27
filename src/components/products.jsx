@@ -13,10 +13,11 @@ const Card = ({ product }) => {
 }
 
 const DisplayCards = ({ products }) => {
+    const user = localStorage.getItem("token") || null;
     // console.log(products);
     return (
         <div className="cards">
-            {products.map(product => (<Link key={product.id} to={`/products/${product.id}`} style={{ textDecoration: "none", color: "inherit" }}><Card product={product} /> </Link>))}
+            {products.map(product => (<Link key={product.id} to={user ? `/products/${product.id}` : "/login"} style={{ textDecoration: "none", color: "inherit" }}><Card product={product} /> </Link>))}
         </div>
     )
 }

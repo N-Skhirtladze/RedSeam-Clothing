@@ -1,12 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
+import { Link } from "react-router-dom";
 
 const Header = () => {
-    return(
+    const user = localStorage.getItem("token") || null;
+    return (
         <header>
-            <img src="../images/Logo.png" alt="" className="logo" />
+            <Link to="/" style={{ textDecoration: "none", color: "inherit", width: "0px", height: "0px" }}><img src="../images/Logo.png" alt="" className="logo" /></Link>
             <ul>
                 <li><img src="../images/user.png" alt="" className="user" /></li>
-                <li>Log in</li>
+                {user ? <img src="../images/shopping-cart.png" /> : <Link to={"/login"} style={{ textDecoration: "none", color: "inherit" }}><li>Log in</li></Link>}
             </ul>
         </header>
     )

@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 
 ul {
@@ -24,7 +24,7 @@ header {
   width: 90%;
   height: auto;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   padding: 28px 0;
 }
@@ -263,6 +263,7 @@ header ul {
   justify-content: space-between;
   align-items: center;
   margin-top: 90px;
+  padding-bottom: 30px;
 }
 
 .page {
@@ -740,11 +741,11 @@ header ul {
   opacity: .7;
 }
 
-.registration {
-  width: 90%;
+.registration, .login {
+  width: 100%;
   height: 1000px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: flex-start; */
   align-items: center;
 }
 
@@ -753,20 +754,23 @@ header ul {
   height: 100%;
 }
 
-.registration-form {
+.registration-form, .login-form {
   display: flex;
   flex-direction: column;
   width: 554px;
   height: 529px;
   align-items: flex-start;
+  margin-left: 173px;
 }
 
-.registration-form h1 {
+.registration-form h1,
+.login-form h1 {
   font-size: 42px;
   color: #10151F;
 }
 
-.registration-form form{
+.registration-form form,
+.login-form form{
   width: 100%;
   height: 240px;
   display: flex;
@@ -774,8 +778,11 @@ header ul {
   justify-content: space-between;
   margin-top: 48px;
 }
-
-.registration-form form input {
+.login-form form {
+  height: 120px;
+}
+.registration-form form input,
+.login-form form input {
   padding: 10.5px 12px;
   border: 1px solid #E1DFE1;
   border-radius: 8px;
@@ -784,19 +791,20 @@ header ul {
 
 .eye{
   position: absolute;
+  right: 243px;
+
 }
 
 .upper {
   top: 600px;
-  right: 110px;
 }
 
 .lower {
   top: 666px;
-  right: 110px;
 }
 
-.registration-form form button {
+.registration-form form button,
+.login-form form button {
   background-color: #FF4000;
   border: none;
   width: 100%;
@@ -808,11 +816,13 @@ header ul {
   transition: .2s;
 }
 
-.registration-form form button:hover {
+.registration-form form button:hover,
+.login-form form button:hover {
   opacity: .7;
 }
 
-.registration-form p{
+.registration-form p,
+.login-form p{
   margin-top: 157px;
   width: 100%;
   display: flex;
@@ -821,7 +831,19 @@ header ul {
   font-size: 14px;
 }
 
-.registration-form p span{
+.registration-form p span,
+.login-form p span{
   margin-left: 8px;
   color: #FF4000;
+}
+
+.for-login {
+  top: 531px;
+}
+
+.for-left {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
