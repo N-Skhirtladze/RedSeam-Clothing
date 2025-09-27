@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react"
 
-const Description = ({ product, color, setColor, isOpen, setIsOpen, setProductList, image }) => {
+const Description = ({ product, color, setColor, isOpen, setIsOpen, setProductList, image, setImage }) => {
     const [size, setSize] = useState(product?.available_sizes[0]);
     const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
         setSize(product?.available_sizes[0]);
+        setImage(product?.cover_image);
+        console.log('image', image);
     }, [product]);
 
     const handleQuantity = (e) => {
