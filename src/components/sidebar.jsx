@@ -17,7 +17,7 @@ const Sidebar = ({ isOpen, setIsOpen, productList, setProductList, finalCost, se
                 <p className="delivery">Delivery <span>$5</span></p>
                 <p className="total">Total <span>${finalCost + 5}</span></p>
             </div>
-                <button type="button" className="checkout-btn">Go to checkout</button></>) :
+                <Link to='/registration'style={{ textDecoration: "none", color: "inherit" }} className="checkout-btn"><p style={{color: "white"}}>Go to checkout</p></Link></>) :
                 <div className="no-item">
                     <img src="../images/Making Credit Purchase Online Securely.png" alt="" />
                     <p className="oops">Ooops!</p>

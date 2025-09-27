@@ -714,7 +714,7 @@ header ul {
   margin-top: 24px;
 }
 
-.oops-reason{
+.oops-reason {
   font-size: 14px;
   font-weight: 400;
   color: #3E424A;
@@ -738,4 +738,90 @@ header ul {
 
 .start-shoping:hover {
   opacity: .7;
+}
+
+.registration {
+  width: 90%;
+  height: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reg-log-cover {
+  width: 948px;
+  height: 100%;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  width: 554px;
+  height: 529px;
+  align-items: flex-start;
+}
+
+.registration-form h1 {
+  font-size: 42px;
+  color: #10151F;
+}
+
+.registration-form form{
+  width: 100%;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 48px;
+}
+
+.registration-form form input {
+  padding: 10.5px 12px;
+  border: 1px solid #E1DFE1;
+  border-radius: 8px;
+  margin-top: 24px;
+}
+
+.eye{
+  position: absolute;
+}
+
+.upper {
+  top: 600px;
+  right: 110px;
+}
+
+.lower {
+  top: 666px;
+  right: 110px;
+}
+
+.registration-form form button {
+  background-color: #FF4000;
+  border: none;
+  width: 100%;
+  padding: 10px 0;
+  color: white;
+  font-size: 14px;
+  border-radius: 10px;
+  margin-top: 46px;
+  transition: .2s;
+}
+
+.registration-form form button:hover {
+  opacity: .7;
+}
+
+.registration-form p{
+  margin-top: 157px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.registration-form p span{
+  margin-left: 8px;
+  color: #FF4000;
 }
