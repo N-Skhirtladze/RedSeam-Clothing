@@ -9,17 +9,15 @@ import Congrats from "./pages/congrats";
 
 function App() {
   return (
-    <BrowserRouter basename="/RedSeam-Clothing">
-      <Routes>
-        <Route path="/" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/congrats" element={<Congrats />} />
-      </Routes>
-    </BrowserRouter>
-  )
+    <Routes>
+      <Route path="/" element={<Products />} />
+      <Route path="/products/:id" element={<ProductDetail />} />
+      <Route path="/registration" element={<Registration />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/congrats" element={<Congrats />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
