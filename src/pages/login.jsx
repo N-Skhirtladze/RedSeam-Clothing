@@ -37,7 +37,7 @@ const Login = () => {
             <Header />
             <div className="for-left">
                 <div className="login">
-                    <img src="../images/Rectangle 10.png" alt="" className="reg-log-cover" />
+                    <img src="images/Rectangle 10.png" alt="" className="reg-log-cover" />
                     <div className="login-form">
                         <h1>Log in</h1>
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -58,7 +58,7 @@ const Login = () => {
                                 {...register("password", { minLength: { value: 4 } })}
                             />
                             <img
-                                src="../images/Vector101.png"
+                                src="images/Vector101.png"
                                 alt=""
                                 className="eye for-login"
                                 onClick={() => handleInputType(show, setShow)}

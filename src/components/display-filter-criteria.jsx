@@ -9,7 +9,7 @@ const DisplayCriteria = ({ price, setFormData}) => {
         <div className="criteria-div">
             <div className="criteria">
                 <p>Price: {price.from}-{price.to} </p>
-                <img src="./images/x-mark.png" alt="" onClick={handleClear} />
+                <img src="images/x-mark.png" alt="" onClick={handleClear} />
             </div>
         </div>
     )

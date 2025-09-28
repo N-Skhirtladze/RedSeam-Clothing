@@ -62,7 +62,7 @@ const Checkout = () => {
                             id="email-input"
                             required
                         />
-                        <img src="../images/envelope.png" alt="" className="email-icon" />
+                        <img src="images/envelope.png" alt="" className="email-icon" />
                         <div className="flex-input">
                             <input type="text" placeholder="Address" {...register("address")} required />
                             <input type="text" {...register("zip_code")} placeholder="Zip code" value={zip} onChange={handleChange} required />
@@ -81,7 +81,7 @@ const Checkout = () => {
                         </div>
                         <button type="submit" form="checkout-form" style={{ color: "white" }} className="pay-btn" onClick={() => localStorage.setItem("product-list", JSON.stringify([]))}>Pay</button></>) :
                         <div className="no-item">
-                            <img src="../images/Making Credit Purchase Online Securely.png" alt="" />
+                            <img src="images/Making Credit Purchase Online Securely.png" alt="" />
                             <p className="oops">Ooops!</p>
                             <p className="oops-reason">You’ve got nothing in your cart just yet...</p>
                             <Link to='/' style={{ textDecoration: "none", color: "inherit" }}> <button type="button" className="start-shoping">Start shoping</button> </Link>

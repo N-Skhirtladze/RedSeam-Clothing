@@ -52,7 +52,7 @@ const Registration = () => {
             <Header />
             <div className="for-left">
                 <div className="registration">
-                    <img src="../images/Rectangle 10.png" alt="" className="reg-log-cover" />
+                    <img src="images/Rectangle 10.png" alt="" className="reg-log-cover" />
                     <div className="registration-form">
                         <h1>Registration</h1>
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -77,7 +77,7 @@ const Registration = () => {
                                 value={password}
                             />
                             <img
-                                src="../images/Vector101.png"
+                                src="images/Vector101.png"
                                 alt=""
                                 className="eye upper"
                                 onClick={() => handleInputType(showPassword, setShowPassword)}
@@ -92,7 +92,7 @@ const Registration = () => {
                                 style={{ border: confirm ? "1px solid #E1DFE1" : "1px solid red" }}
                             />
                             <img
-                                src="../images/Vector101.png"
+                                src="images/Vector101.png"
                                 alt=""
                                 className="eye lower"
                                 onClick={() => handleInputType(showConfirmPassword, setShowConfirmPassword)}

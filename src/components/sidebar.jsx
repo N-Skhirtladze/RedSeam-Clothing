@@ -7,7 +7,7 @@ const Sidebar = ({ isOpen, setIsOpen, productList, setProductList, finalCost, se
         <div className={isOpen ? "sidebar open-sidebar" : "sidebar"}>
             <div className="sidebar-header">
                 <p className="producs-amount">Shopping cart ({productList.length})</p>
-                <img src="../images/x-mark2.png" alt="" onClick={() => setIsOpen(!isOpen)} />
+                <img src="images/x-mark2.png" alt="" onClick={() => setIsOpen(!isOpen)} />
             </div>
             <div className="picked-items">
                 {productList.map((product) => (<PickedProduct key={product.variationId} product={product} setFinalCost={setFinalCost} setProductList={setProductList} />))}
@@ -19,7 +19,7 @@ const Sidebar = ({ isOpen, setIsOpen, productList, setProductList, finalCost, se
             </div>
                 <Link to='/checkout'style={{ textDecoration: "none", color: "inherit" }} className="checkout-btn"><p style={{color: "white"}}>Go to checkout</p></Link></>) :
                 <div className="no-item">
-                    <img src="../images/Making Credit Purchase Online Securely.png" alt="" />
+                    <img src="images/Making Credit Purchase Online Securely.png" alt="" />
                     <p className="oops">Ooops!</p>
                     <p className="oops-reason">You’ve got nothing in your cart just yet...</p>
                     <Link to='/' style={{ textDecoration: "none", color: "inherit" }}> <button type="button" className="start-shoping">Start shoping</button> </Link>

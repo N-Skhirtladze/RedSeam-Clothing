@@ -106,7 +106,7 @@ const Description = ({ product, color, setColor, isOpen, setIsOpen, setProductLi
                     <input type="number" name="quantity" value={quantity} min={1} onChange={handleQuantity} />
                 </form>
             </div>
-            <button type="button" className="add-to-cart" onClick={handleAddToCart}><img src="../images/Vector.png" alt="" /> Add to cart</button>
+            <button type="button" className="add-to-cart" onClick={handleAddToCart}><img src="images/Vector.png" alt="" /> Add to cart</button>
             <div className="details-div">
                 <div className="details-header">
                     <p>Details</p>

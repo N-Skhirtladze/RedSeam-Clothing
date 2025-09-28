@@ -19,7 +19,7 @@ const Filtration = ({ setCriteria, firstInputProps, secondInputProps, handleSubm
                 <li className="shown-products">Showing {from}–{to} of {total} results</li>
                 <li className="filter">
                     <ul>
-                        <li onClick={handlePriceForm}><img src="./images/adjustments-horizontal.png" alt="" className="filter-icon" /></li>
+                        <li onClick={handlePriceForm}><img src="images/adjustments-horizontal.png" alt="" className="filter-icon" /></li>
                         <li onClick={handlePriceForm}>Filter</li>
                         <li>
                             <Filter setPriceForm={setPriceForm} setDropDown={setDropDown} priceForm={priceForm} firstInputProps={firstInputProps} secondInputProps={secondInputProps} handleSubmit={handleSubmit} setFormData={setFormData} />
