@@ -9,7 +9,7 @@ import Congrats from "./pages/congrats";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/RedSeam-Clothing">
       <Routes>
         <Route path="/" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetail />} />
