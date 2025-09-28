@@ -37,7 +37,7 @@ const Registration = () => {
                 const result = await response.json();
                 console.log("API response:", result);
                 localStorage.setItem("token", JSON.stringify(result.token));
-                navigate("/");
+                navigate("/login");
 
             } catch (err) {
                 console.error("Error:", err);

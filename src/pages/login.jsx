@@ -15,7 +15,7 @@ const Login = () => {
 
     const onSubmit = async (data) => {
         try {
-            const response = await fetch("https://api.redseam.redberryinternship.ge/api/register", {
+            const response = await fetch("https://api.redseam.redberryinternship.ge/api/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -25,7 +25,7 @@ const Login = () => {
 
             const result = await response.json();
             console.log("API response:", result);
-            localStorage.setItem("token", JSON.stringify(result.token));
+            localStorage.setItem("token", result.token);
             navigate("/");
 
         } catch (err) {
@@ -66,7 +66,7 @@ const Login = () => {
 
                             <button type="submit">Log in</button>
                         </form>
-                        <p>Already member? <Link to="/registration" style={{ textDecoration: "none", color: "inherit" }}><span>registartion</span></Link></p>
+                        <p>Not a member?<Link to="/registration" style={{ textDecoration: "none", color: "inherit" }}><span>Registartion</span></Link></p>
                     </div>
                 </div>
             </div>

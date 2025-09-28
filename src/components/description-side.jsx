@@ -1,13 +1,14 @@
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react"
 
 const Description = ({ product, color, setColor, isOpen, setIsOpen, setProductList, image, setImage }) => {
     const [size, setSize] = useState(product?.available_sizes[0]);
     const [quantity, setQuantity] = useState(1);
+    const { id } = useParams();
 
     useEffect(() => {
         setSize(product?.available_sizes[0]);
         setImage(product?.cover_image);
-        console.log('image', image);
     }, [product]);
 
     const handleQuantity = (e) => {
@@ -24,9 +25,13 @@ const Description = ({ product, color, setColor, isOpen, setIsOpen, setProductLi
     }
 
     const handleAddToCart = () => {
-        setIsOpen(!isOpen);
+        setIsOpen(true);
+        const token = localStorage.getItem('token');
+        const colorIndex = color ?? 0;
+        const sizeIndex = product?.available_sizes.indexOf(size);
+        const variationId = Number(`${product.id}${colorIndex}${sizeIndex}`);
         const productInfo = {
-            id: crypto.randomUUID(),
+            variationId: variationId,
             name: product.name,
             color: product?.available_colors[color],
             image: image,
@@ -38,12 +43,27 @@ const Description = ({ product, color, setColor, isOpen, setIsOpen, setProductLi
         setProductList((prev) => {
             const index = prev.findIndex((p) => p.name == productInfo.name && p.color == productInfo.color && p.size == productInfo.size && p.price == productInfo.price);
 
-            if (index == -1) return [...prev, productInfo];
+            if (index == -1) return [...prev, productInfo]
 
             return [...prev];
-
         });
-
+        const handlePost = async () => {
+            const response = await fetch(`https://api.redseam.redberryinternship.ge/api/cart/products/${id}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    quantity: productInfo.quantity,
+                    color: productInfo.color,
+                    size: productInfo.size
+                })
+            });
+            const result = await response.json();
+            console.log(result);
+        }
+        handlePost();
     }
     return (
         <div className="description">
@@ -55,7 +75,6 @@ const Description = ({ product, color, setColor, isOpen, setIsOpen, setProductLi
                 <p className="picked-color">Color: {product?.available_colors[color]}</p>
                 <div className="available-colors">
                     {product?.available_colors.map((c, index) => {
-                        console.log("Color at", index, "=", color);
                         return (
                             <p style={
                                 {
